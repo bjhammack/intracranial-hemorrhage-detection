@@ -1,5 +1,5 @@
 # Identifying Intracranial Hemorrhaging in CT Scan Images
-(Note: for a more detailed write-up of each step, please view the Jupyter Notebook itself.)
+(Note: for a more detailed write-up of each step, please comprehensive_report.pdf found in the home directory of this repository.)
 
 Brain hemorrhaging can be one of the most dangerous situations a person faces. If not identified and treated quickly, it can put your life in serious danger and potentially cause long lasting damage. Identifying hemorrhages in CT scans quickly and accurately is often the deciding factor between which of these situations come to fruition.
 
@@ -32,25 +32,8 @@ With this all complete, the data was in a condition for initial analysis.
 
 
 # Neural Network
-The neural network went through several iterations, each one pursuing a new angle or incorporating new transformations to the data. 
+The neural network went through several iterations, each one pursuing a new angle or incorporating new transformations to the data. This section will only cover the final form of the model; if you wish to read about each iteration, the thought process behind each, and the results of them please read `comprehensive_report.pdf` found in the home directory of this report.
 
-## Iteration 1
-The first iteration used images at a resolution of 50x50, used 3 hidden dense layers with relu activation, two droupout layers, had an output layer with sigmoid activation, and binary crossentropy as its loss function. This provided the following results:
 
-Loss:
-
-![loss](https://github.com/bjhammack/intracranial_hemorrhage_detection/blob/master/images/model_loss_v1.png?raw=true "Loss")
-
-Acc:
-
-![acc](https://github.com/bjhammack/intracranial_hemorrhage_detection/blob/master/images/model_acc_v1.png?raw=true "Accuracy")
-
-While these results were encouraging for a first pass, two immediate questions needed to be answered: 1) Was the image resolution preventing the model from being any more accuract? 2) Was the model performing so well due to overfitting? Iteration 2 shed some light on the first question.
-
-## Iteration 2
-Iteration 2 kept an identical model to iteratoin 1, the only differencd was that now the images were 75x75 resolution, instead of 50x50. After running the model, almost identical results were achieved, with 0.449 loss and 0.815 accuracy. This made me feel comfortable going back to 50x50 images, for the sake of processing speed, and allowed me to shift my focus to examining the possibility of much more integral data issues causing these results for iteration 3.
-
-## Iteration 3
-Iteration 3 saw two major changes. First, the distribution of hemorrhaging images was altered. For the previous two iterations, half the images imported were images without any hemorrhaging and the other half were randomly selected positive hemorrhaging images. Now, to test and see if the large count of negative hemorrhaging images were allowing the model to be overfit, 90% of the images would be randomly selected positive hemorrhaging images. If the model was overfitting, surely the large influx of hemorrhaging images would cause a noticeable decrease in performance. Secondly, an extra set of data was introduced. 25,000 new images would be used to test the model's predictive power after it had been trained, providing more metrics for us to examine. The model itself remained the same.
 
 # Final Thoughts
