@@ -1,5 +1,5 @@
 # Identifying Intracranial Hemorrhaging in CT Scan Images
-(Note: for a more detailed write-up of each step, please comprehensive_report.pdf found in the home directory of this repository.)
+(Note: for a more detailed write-up of the entire process, please read `comprehensive_report.pdf` found in the home directory of this repository.)
 
 Brain hemorrhaging can be one of the most dangerous situations a person faces. If not identified and treated quickly, it can put your life in serious danger and potentially cause long lasting damage. Identifying hemorrhages in CT scans quickly and accurately is often the deciding factor between which of these situations come to fruition.
 
@@ -24,6 +24,9 @@ Before analysis could take place, several transformative steps needed to be take
 First, the training label CSV needed to be transformed into a format that could actually be used for training. After this, the images needed to be imported, their patient IDs and pixel arrays extracted, then they needed to be matched to their training label, so I could actually identify what types of hemorrhaging were occuring in each image.
 
 With this all complete, the data was in a condition for initial analysis.
+
+## Note
+After import, the numpy arrays of both the images and the labels that were imported are written to .npy files in the `/data/` folder. This is so subsequent analysis can be performed without going through the tedious image import every time. These files do NOT contain the whole dataset and may not be the version of the import used in the final iteration of the model.
 
 # Data Analysis
 
