@@ -18,15 +18,5 @@ DICOM Image example at 75x75 resolution:
 
 ![DICOM](https://github.com/bjhammack/intracranial_hemorrhage_detection/blob/master/images/image_sample_v2.png?raw=true "DICOM Image")
 
-# Data Import
-Before analysis could take place, several transformative steps needed to be taken to have interpretable data.
-
-First, the training label CSV needed to be transformed into a format that could actually be used for training. After this, the images needed to be imported, their patient IDs and pixel arrays extracted, then they needed to be matched to their training label, so I could actually identify what types of hemorrhaging were occuring in each image.
-
-With this all complete, the data was in a condition for initial analysis.
-
-## Note
-After import, the numpy arrays of both the images and the labels that were imported are written to .npy files in the `/data/` folder. This is so subsequent analysis can be performed without going through the tedious image import every time. These files do NOT contain the whole dataset and may not be the version of the import used in the final iteration of the model.
-
 # Neural Network
 The neural network went through several iterations, each one pursuing a new angle or incorporating new transformations to the data. This section will only cover the final form of the model; if you wish to read about each iteration, the thought process behind each, and the results of them please read `comprehensive_report.pdf` found in the home directory of this report.
