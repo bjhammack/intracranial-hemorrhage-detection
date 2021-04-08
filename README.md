@@ -28,15 +28,5 @@ With this all complete, the data was in a condition for initial analysis.
 ## Note
 After import, the numpy arrays of both the images and the labels that were imported are written to .npy files in the `/data/` folder. This is so subsequent analysis can be performed without going through the tedious image import every time. These files do NOT contain the whole dataset and may not be the version of the import used in the final iteration of the model.
 
-# Data Analysis
-
-
-# Data Transformation
-
-
 # Neural Network
 The neural network went through several iterations, each one pursuing a new angle or incorporating new transformations to the data. This section will only cover the final form of the model; if you wish to read about each iteration, the thought process behind each, and the results of them please read `comprehensive_report.pdf` found in the home directory of this report.
-
-
-
-# Final Thoughts
